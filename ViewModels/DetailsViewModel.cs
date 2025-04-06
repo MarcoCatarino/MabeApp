@@ -1,6 +1,6 @@
 ﻿// ViewModels/DetailsViewModel.cs
-using Device = MabeApp.Models.Device;
 using System.Windows.Input;
+using Device = MabeApp.Models.Device;
 
 namespace MabeApp.ViewModels;
 

@@ -1,14 +1,14 @@
 ﻿// ViewModels/MainViewModel.cs
-using Device = MabeApp.Models.Device;
 using MabeApp.Services;
 using MabeApp.Views;
 using System.Collections.ObjectModel;
 using System.Windows.Input;
+using Device = MabeApp.Models.Device;
 
 namespace MabeApp.ViewModels;
 
 public class MainViewModel : BaseViewModel
-{    
+{
     private readonly MockDataService _dataService;
     private Device _selectedDevice;
 

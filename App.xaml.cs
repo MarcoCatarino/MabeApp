@@ -1,6 +1,4 @@
-﻿using MabeApp.Services;
-
-namespace MabeApp;
+﻿namespace MabeApp;
 
 public partial class App : Application
 {

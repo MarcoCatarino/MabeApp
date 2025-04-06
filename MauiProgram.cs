@@ -1,8 +1,9 @@
 ﻿// MauiProgram.cs
+using MabeApp.Converters;
 using MabeApp.Services;
 using MabeApp.ViewModels;
 using MabeApp.Views;
-using MabeApp.Converters;
+using Microsoft.Extensions.Logging;
 
 namespace MabeApp;
 
@@ -12,22 +13,21 @@ public static class MauiProgram
     {
         var builder = MauiApp.CreateBuilder();
         builder
-            .UseMauiApp<App>()
-            .ConfigureFonts(fonts => { /* ... */ });
+            .UseMauiApp<App>();
 
-        builder.Services.AddSingleton<App>();  
+        builder.Services.AddSingleton<App>();
         builder.Services.AddSingleton<AppShell>();
-        
 
-        builder.Services.AddSingleton<AuthService>();        
+
+        builder.Services.AddSingleton<AuthService>();
         builder.Services.AddSingleton<MockDataService>();
 
-        builder.Services.AddSingleton<LoginPage>();                                                    
+        builder.Services.AddSingleton<LoginPage>();
         builder.Services.AddSingleton<LoginViewModel>();
 
         builder.Services.AddSingleton<SignUpPage>();
         builder.Services.AddSingleton<SignUpViewModel>();
-        
+
         builder.Services.AddSingleton<MainView>();
         builder.Services.AddSingleton<MainViewModel>();
 
@@ -39,6 +39,8 @@ public static class MauiProgram
 
         builder.Services.AddSingleton<BoolToStatusConverter>();
         builder.Services.AddSingleton<BoolToColorConverter>();
+
+        builder.Logging.AddDebug();
 
         return builder.Build();
     }
