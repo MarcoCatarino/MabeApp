@@ -1,0 +1,28 @@
+<!-- Views/LoginPage.xaml -->
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MabeApp.Views.LoginPage"
+             Title="Iniciar Sesión"
+             BackgroundColor="{StaticResource Gray100}">
+
+    <VerticalStackLayout Spacing="20" Padding="30" VerticalOptions="Center">
+        <Image Source="mabe_logo.png" HeightRequest="80" HorizontalOptions="Center" />
+
+        <!-- Campos de Login -->
+        <Entry Placeholder="Usuario" Text="{Binding Username}" />
+        <Entry Placeholder="Contraseña" Text="{Binding Password}" IsPassword="True" />
+
+        <!-- Botón de Login -->
+        <Button Text="Iniciar Sesión" 
+                Command="{Binding LoginCommand}" 
+                BackgroundColor="{StaticResource MabeBlue}" 
+                TextColor="White" />
+
+        <!-- Enlace a SignUp -->
+        <Label Text="¿No tienes cuenta? Regístrate" TextDecorations="Underline">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding NavigateToSignUpCommand}" />
+            </Label.GestureRecognizers>
+        </Label>
+    </VerticalStackLayout>
+</ContentPage>
